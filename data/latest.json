@@ -1,0 +1,112 @@
+{
+  "date": "2026-03-10",
+  "window": "过去24小时",
+  "quick": [
+    "兴业银锡：近期核心仍是3/5股权出售进展，近24小时未见新增公告原文。",
+    "银价高位，锡价波动偏大，银强锡弱分化延续。",
+    "AI资本开支从扩张优先转向回报优先。",
+    "油价冲击继续压制全球风险偏好。",
+    "中国政策方向稳增长+创新驱动，交易看落地节奏。"
+  ],
+  "special": [
+    {
+      "title": "兴业银锡近期公告进展",
+      "fact": "可核验线索显示3/5有‘出售双源有色60%股权进展公告’，近24小时未见更新。",
+      "why": "公司驱动偏弱时，股价更受金属价格与风险偏好影响。",
+      "grade": "B",
+      "links": ["https://www.stcn.com/quotes/index/sz000426.html"]
+    },
+    {
+      "title": "银价高位",
+      "fact": "多来源显示银价仍处高位区间。",
+      "why": "对兴业银锡的‘银价弹性’逻辑形成支撑。",
+      "grade": "B",
+      "links": ["http://www.kitco.com/charts/silver", "https://www.jmbullion.com/charts/silver-prices/"]
+    },
+    {
+      "title": "锡价波动偏弱",
+      "fact": "LME/行情站点口径显示锡价波动较大且偏弱。",
+      "why": "若银强锡弱持续，持仓会更偏‘银逻辑’定价。",
+      "grade": "B",
+      "links": ["https://www.lme.com/en/metals/non-ferrous/lme-tin", "https://www.investing.com/commodities/tin"]
+    }
+  ],
+  "deep": [
+    {
+      "title": "AI投资从规模扩张转向回报约束",
+      "fact": "Nvidia关于对OpenAI/Anthropic投资边际收缩的表态引发关注。",
+      "why": "AI估值中‘现金流与回报率’权重提高。",
+      "grade": "B",
+      "links": ["https://www.reuters.com/business/nvidia-will-not-be-able-invest-100-billion-openai-due-ipo-ceo-jensen-says-2026-03-04/"]
+    },
+    {
+      "title": "油价冲击仍是宏观主变量",
+      "fact": "Reuters多条报道提到油价与美股风险偏好联动。",
+      "why": "会影响成长资产估值与大宗链条波动。",
+      "grade": "B",
+      "links": ["https://www.reuters.com/markets/us/wall-streets-immunity-mideast-oil-shock-will-now-be-tested-2026-03-09/"]
+    }
+  ],
+  "impact": [
+    {
+      "title": "机会",
+      "fact": "银价高位有利于‘银弹性’交易。",
+      "why": "公司公告偏平时，价格因子权重更高。",
+      "grade": "B",
+      "links": ["http://www.kitco.com/charts/silver"]
+    },
+    {
+      "title": "风险",
+      "fact": "锡价弱势与油价扰动可能带来回撤。",
+      "why": "资源股受商品与风险偏好双重影响。",
+      "grade": "B",
+      "links": ["https://www.lme.com/en/metals/non-ferrous/lme-tin"]
+    }
+  ],
+  "watch": [
+    {
+      "title": "兴业银锡新公告",
+      "fact": "监控是否出现新日期公告原文。",
+      "why": "公告是公司层面的直接催化。",
+      "grade": "A",
+      "links": ["https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/000426.phtml"]
+    },
+    {
+      "title": "银价是否续强",
+      "fact": "看是否维持高位并上行。",
+      "why": "决定短线情绪强弱。",
+      "grade": "B",
+      "links": ["http://www.kitco.com/charts/silver"]
+    },
+    {
+      "title": "LME锡是否止跌",
+      "fact": "关注日内跌幅收敛或转正。",
+      "why": "影响‘银锡分化’是否缓和。",
+      "grade": "B",
+      "links": ["https://www.lme.com/en/metals/non-ferrous/lme-tin"]
+    }
+  ],
+  "highlights": [
+    {
+      "title": "科技/AI：Nvidia投资边际收缩",
+      "fact": "AI资金逻辑更看回报。",
+      "why": "估值体系可能重定价。",
+      "grade": "B",
+      "links": ["https://www.reuters.com/business/nvidia-will-not-be-able-invest-100-billion-openai-due-ipo-ceo-jensen-says-2026-03-04/"]
+    },
+    {
+      "title": "财经/市场：油价冲击风险偏好",
+      "fact": "油价与股市波动联动。",
+      "why": "影响短线仓位管理。",
+      "grade": "B",
+      "links": ["https://www.reuters.com/business/us-stock-futures-slip-investors-weigh-middle-east-war-fallout-2026-03-05/"]
+    },
+    {
+      "title": "宏观/国际：中国政策稳增长+创新",
+      "fact": "增长目标与政策组合延续。",
+      "why": "方向清晰，关注执行强度。",
+      "grade": "B",
+      "links": ["https://english.news.cn/20260306/42d1bb0eebd54ebba5aca2d3b8499d2b/c.html"]
+    }
+  ]
+}
