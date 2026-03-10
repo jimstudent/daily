@@ -80,9 +80,24 @@
 <script>
 const order=[["special","A. 兴业银锡专项"],["highlights","B. 今日要点"],["deep","C. 深度解读"],["impact","D. 对我可能有影响"],["watch","E. 今天值得关注"]];
 const PREF_KEY='daily_pref_v1';
+// TODO: set to your Cloudflare Worker endpoint, e.g. https://daily-click-api.xxx.workers.dev
+const TRACK_ENDPOINT='';
 function loadPref(){try{return JSON.parse(localStorage.getItem(PREF_KEY)||'{"sections":{},"titles":{},"links":0,"opens":0}')}catch{return {sections:{},titles:{},links:0,opens:0}}}
 function savePref(p){localStorage.setItem(PREF_KEY, JSON.stringify(p))}
 function bump(obj,key,n=1){obj[key]=(obj[key]||0)+n}
+function sendTrack(payload){
+  if(!TRACK_ENDPOINT) return;
+  const url = TRACK_ENDPOINT.replace(/\/$/, '') + '/api/click';
+  const body = JSON.stringify(payload);
+  try{
+    if(navigator.sendBeacon){
+      const blob = new Blob([body], {type:'application/json'});
+      navigator.sendBeacon(url, blob);
+    } else {
+      fetch(url,{method:'POST',headers:{'content-type':'application/json'},body,keepalive:true}).catch(()=>{});
+    }
+  }catch{}
+}
 function hostLabel(url){try{const h=new URL(url).hostname.replace('www.','');return h.split('.').slice(0,2).join('.')}catch{return '来源'}}
 function item(it,section){
   const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
@@ -123,6 +138,7 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
       bump(pref.titles, it.title || 'unknown');
       pref.opens = (pref.opens||0) + 1;
       savePref(pref);
+      sendTrack({type:'open', section: it.section || 'unknown', title: it.title || 'unknown', path: location.pathname});
     }catch(e){console.error(e)}
   }});
 
@@ -131,6 +147,8 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
       const p=loadPref();
       p.links=(p.links||0)+1;
       savePref(p);
+      const href=e.target.getAttribute('href')||'';
+      sendTrack({type:'link', section:'source', title:href, source:hostLabel(href), path: location.pathname});
     }
   });
 }
