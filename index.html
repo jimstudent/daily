@@ -23,6 +23,11 @@
     .summary{color:var(--muted);font-size:13px;margin-top:4px}
     .detail{margin-top:8px;display:none}
     .item.open .detail{display:block}
+    .drawer-mask{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:80}
+    .drawer{position:fixed;left:0;right:0;bottom:0;max-height:78vh;background:#121a30;border-top:1px solid var(--line);border-radius:16px 16px 0 0;padding:12px;display:none;z-index:90;overflow:auto}
+    .drawer.open,.drawer-mask.open{display:block}
+    .drawer-title{font-weight:700;margin-bottom:8px}
+    .drawer-close{float:right}
     .item-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
     .btn-link{font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:8px;background:#1a2340;color:#cfe0ff;cursor:pointer}
     .src{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
@@ -66,6 +71,11 @@
   </div>
   <div id="sections"></div>
 </div>
+<div id="drawerMask" class="drawer-mask"></div>
+<div id="drawer" class="drawer">
+  <button id="drawerClose" class="btn-link drawer-close" type="button">关闭</button>
+  <div id="drawerBody"></div>
+</div>
 <script>
 const order=[["special","A. 兴业银锡专项"],["highlights","B. 今日要点"],["deep","C. 深度解读"],["impact","D. 对我可能有影响"],["watch","E. 今天值得关注"]];
 function hostLabel(url){try{const h=new URL(url).hostname.replace('www.','');return h.split('.').slice(0,2).join('.')}catch{return '来源'}}
@@ -73,8 +83,9 @@ function item(it){
   const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
   const summary=(it.fact||'').split('。')[0] + (it.fact&&it.fact.includes('。')?'。':'');
   const src=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
+  const payload=encodeURIComponent(JSON.stringify({title:it.title||'',grade:it.grade||'',fact:it.fact||'',why:it.why||'',links:it.links||[]}));
   return `<div class='item'>
-    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${summary||''}</div></div><button class='btn-link' type='button'>查看详情</button></div>
+    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${summary||''}</div></div><button class='btn-link open-drawer' data-item='${payload}' type='button'>查看详情</button></div>
     <div class='detail'><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${src}</div></div>
   </div>`
 }
@@ -83,7 +94,20 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
   const hs=d.highlights||[]; const ai=hs.filter(x=>(x.title||'').includes('【科技/AI】')).length; const mk=hs.filter(x=>(x.title||'').includes('【财经/市场】')).length; const ma=hs.filter(x=>(x.title||'').includes('【宏观/国际】')).length;
   document.getElementById('ratio').innerHTML=`<span class='chip'>科技/AI ${ai}</span><span class='chip'>财经/市场 ${mk}</span><span class='chip'>宏观/国际 ${ma}</span>`;
   const s=document.getElementById('sections');s.innerHTML='';order.forEach(([k,t])=>{const c=document.createElement('div');c.className='card';c.id=`sec-${k}`;c.innerHTML=`<h2>${t}</h2>`;const arr=d[k]||[];if(!arr.length)c.innerHTML+=`<div class='why'>该项数据不足</div>`;else arr.forEach(it=>c.innerHTML+=item(it));s.appendChild(c)});
-  document.querySelectorAll('.item .btn-link').forEach(btn=>{btn.onclick=()=>{const it=btn.closest('.item'); const open=it.classList.toggle('open'); btn.textContent=open?'收起详情':'查看详情';};});
+  const drawer=document.getElementById('drawer');
+  const mask=document.getElementById('drawerMask');
+  const body=document.getElementById('drawerBody');
+  const close=()=>{drawer.classList.remove('open');mask.classList.remove('open')};
+  document.getElementById('drawerClose').onclick=close; mask.onclick=close;
+  document.querySelectorAll('.open-drawer').forEach(btn=>{btn.onclick=()=>{
+    try{
+      const it=JSON.parse(decodeURIComponent(btn.dataset.item||''));
+      const links=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
+      const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
+      body.innerHTML=`<div class='drawer-title'>${it.title||''} ${g}</div><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${links}</div>`;
+      drawer.classList.add('open'); mask.classList.add('open');
+    }catch(e){console.error(e)}
+  }});
 }
 async function boot(){
   const idx=await load('./data/index.json').catch(()=>({dates:[]}));
