@@ -40,7 +40,7 @@
   <div id="sections"></div>
 </div>
 <script>
-const order=[["special","A. 兴业银锡专项"],["deep","B. 深度解读"],["impact","C. 对我可能有影响"],["watch","D. 今天值得关注"],["highlights","E. 今日要点"]];
+const order=[["special","A. 兴业银锡专项"],["highlights","B. 今日要点"],["deep","C. 深度解读"],["impact","D. 对我可能有影响"],["watch","E. 今天值得关注"]];
 function item(it){const links=(it.links||[]).map(l=>`<a href='${l}' target='_blank'>来源</a>`).join(' · ');const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';return `<div class='item'><div><b>${it.title||''}</b>${g}</div><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div>${links}</div></div>`}
 async function load(path){const r=await fetch(path+'?_='+Date.now());if(!r.ok)throw new Error('load failed');return r.json()}
 function render(d){document.getElementById('meta').textContent=`${d.date||''} · ${d.window||''}`;const q=document.getElementById('quick');q.innerHTML='';(d.quick||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;q.appendChild(li)});const s=document.getElementById('sections');s.innerHTML='';order.forEach(([k,t])=>{const c=document.createElement('div');c.className='card';c.innerHTML=`<h2>${t}</h2>`;const arr=d[k]||[];if(!arr.length)c.innerHTML+=`<div class='why'>该项数据不足</div>`;else arr.forEach(it=>c.innerHTML+=item(it));s.appendChild(c)});
