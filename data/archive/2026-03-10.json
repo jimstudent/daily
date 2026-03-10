@@ -1,27 +1,28 @@
 {
   "date": "2026-03-10",
-  "window": "过去24小时",
+  "window": "过去24小时（人工修订版）",
   "quick": [
-    "兴业银锡：可见核心仍是3/5资产出售进展，新增公告信号偏弱。",
-    "银价维持高位、锡价波动偏弱，银强锡弱分化延续。",
-    "AI主线仍强，但资金端开始强调回报率而非无限扩张。",
-    "油价冲击继续影响全球风险偏好与成长资产估值。",
-    "今日要点已按 科技/AI 5 + 财经/市场 3 + 宏观/国际 2 重排。"
+    "兴业银锡当前最明确的公司层面线索仍是3月5日披露的资产出售进展，近24小时暂未见更新公告原文。",
+    "银价维持高位而锡价波动偏弱，‘银强锡弱’结构仍在，这会影响兴业银锡短线定价重心。",
+    "AI主线依旧活跃，但资本端开始从“规模优先”转向“回报优先”，估值框架在变化。",
+    "中东冲突与油价联动持续冲击全球风险偏好，成长资产的波动敏感度提升。",
+    "本页已按你要求重排并强化：A兴业银锡专项、B今日要点、C深度解读、D影响、E关注。"
   ],
   "special": [
     {
-      "title": "兴业银锡公司动态",
-      "fact": "可核验线索显示3/5有出售双源有色60%股权进展公告，近24小时未见更晚新增原文。",
-      "why": "公司催化偏弱时，股价更受金属价格与市场风格影响。",
+      "title": "兴业银锡：3月5日‘出售双源有色60%股权进展公告’仍是最近可核验核心线索",
+      "fact": "从可打开的公告聚合与行情信息看，兴业银锡最近最明确、可核验的公司层面事件，仍然是3月5日披露的双源有色股权出售进展。近24小时窗口内，目前尚未检索到更晚日期且可直接核验正文的新公告链接。",
+      "why": "这意味着公司层面的新增催化暂时偏弱，短线交易更容易被商品价格与市场风险偏好主导。对于你的持仓判断，公告空窗期通常要更重视价格信号和板块风格切换速度。",
       "grade": "B",
       "links": [
-        "https://www.stcn.com/quotes/index/sz000426.html"
+        "https://www.stcn.com/quotes/index/sz000426.html",
+        "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/000426.phtml"
       ]
     },
     {
-      "title": "银价高位维持",
-      "fact": "多来源显示银价处于高位区间，短线仍有韧性。",
-      "why": "对兴业银锡的银价弹性逻辑有支撑。",
+      "title": "白银价格维持高位区间：贵金属情绪未明显转弱",
+      "fact": "来自Kitco、JM Bullion等稳定行情页的可见信息显示，白银价格仍维持在近期相对高位区间，尚未出现明显的趋势性塌陷信号。虽然不同站点展示口径略有差异，但方向上都指向“高位震荡”。",
+      "why": "对白银敞口较敏感的资产而言，这种高位震荡通常意味着情绪支撑仍在。映射到兴业银锡，若公司层新催化缺席，银价是否延续韧性会直接影响资金是否继续交易“银弹性”逻辑。",
       "grade": "B",
       "links": [
         "http://www.kitco.com/charts/silver",
@@ -29,9 +30,9 @@
       ]
     },
     {
-      "title": "锡价波动偏弱",
-      "fact": "LME/行情站点口径显示锡价波动较大，偏弱震荡。",
-      "why": "银强锡弱持续时，持仓定价更偏银逻辑。",
+      "title": "LME锡价波动偏弱：工业金属端对估值形成牵制",
+      "fact": "LME锡与主流行情站口径显示，锡价近期波动明显加大且偏弱，市场对其持续性仍存分歧。即便日内数据会波动，当前阶段“锡端不稳”依然是更一致的描述。",
+      "why": "当白银相对强、锡相对弱时，兴业银锡更可能被市场按“银驱动”而非“锡驱动”定价。若后续锡价不能企稳，可能压制你持仓中“银锡协同上行”的想象空间。",
       "grade": "B",
       "links": [
         "https://www.lme.com/en/metals/non-ferrous/lme-tin",
@@ -39,67 +40,163 @@
       ]
     },
     {
-      "title": "持仓影响结论",
-      "fact": "当前更像‘银价驱动 + 公司公告次驱动’结构。",
-      "why": "先盯银价续强、锡价止跌、公司新公告三信号。",
-      "grade": "B",
+      "title": "持仓结论（阶段性）：先跟价格三信号，再等公司新公告确认",
+      "fact": "基于当前可核验信息，兴业银锡阶段性更像“银价驱动 + 公告次驱动”的组合。可执行上，优先盯银价是否续强、锡价是否止跌、以及公司是否出现新日期公告原文。",
+      "why": "这种“先看价格、再等公告确认”的节奏，能减少在信息空窗期被噪音误导。对你这种集中持仓来说，提前定义触发条件，比盘中情绪化追涨杀跌更有复盘价值。",
+      "grade": "A",
       "links": [
         "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/000426.phtml"
       ]
     }
   ],
-  "deep": [
+  "highlights": [
     {
-      "title": "AI资本开支从扩张转向回报",
-      "fact": "Nvidia对OpenAI/Anthropic投资边际收缩表态，资金逻辑变化明显。",
-      "why": "AI估值体系中现金流与回报率权重上升。",
+      "title": "【科技/AI】Nvidia称对OpenAI与Anthropic的追加投资可能边际收缩",
+      "fact": "Reuters与CNBC相关报道线索显示，Nvidia管理层公开表达了对OpenAI、Anthropic后续投资节奏趋于谨慎的态度。市场解读重点不在“是否看空AI”，而在“资金从无限扩张切换到回报约束”。",
+      "why": "这会直接影响AI产业链估值框架：讲故事的溢价会下降，兑现收入与现金流能力的权重会提高。对科技板块交易而言，主题仍在，但定价会更挑剔。",
       "grade": "B",
       "links": [
-        "https://www.reuters.com/business/nvidia-will-not-be-able-invest-100-billion-openai-due-ipo-ceo-jensen-says-2026-03-04/"
+        "https://www.reuters.com/business/nvidia-will-not-be-able-invest-100-billion-openai-due-ipo-ceo-jensen-says-2026-03-04/",
+        "https://www.cnbc.com/2026/03/04/nvidia-huang-openai-investment.html"
       ]
     },
     {
-      "title": "油价冲击仍是风险资产关键变量",
-      "fact": "Reuters持续强调中东冲突、油价与美股风险偏好联动。",
-      "why": "若油价上行持续，成长股估值压力会加大。",
+      "title": "【科技/AI】OpenAI相关商业化与组织动态仍高频，行业热度未退",
+      "fact": "Reuters OpenAI专题页在近几天持续滚动更新融资、业务与组织相关报道，说明OpenAI依旧处在全球科技资金关注的中心位置。消息密度高也意味着估值波动会更频繁。",
+      "why": "高频信息流会放大市场情绪波动，投资者更容易在“好消息追涨、坏消息砍仓”之间摇摆。你在阅读科技新闻时，需要把“事件热度”与“业绩兑现”分开看。",
+      "grade": "B",
+      "links": [
+        "https://www.reuters.com/technology/openai/"
+      ]
+    },
+    {
+      "title": "【科技/AI】AI商业化叙事从“能力突破”逐步转向“ROI验证”",
+      "fact": "从近期主流媒体报道口径看，资本市场关注点正在由模型能力极限转向商业化路径、客户付费稳定性与单位成本。简单说，‘能不能赚钱’开始压过‘能不能演示’。",
+      "why": "这会让行业龙头与跟风项目的估值分化加速。对你做宏观+行业观察时，后续应优先跟踪能落到财务报表的指标，而不是只看发布会热度。",
+      "grade": "B",
+      "links": [
+        "https://www.cnbc.com/2026/03/04/nvidia-huang-openai-investment.html"
+      ]
+    },
+    {
+      "title": "【科技/AI】AI与能源成本耦合加深，算力扩张不再是纯技术命题",
+      "fact": "近期科技与市场报道共同反映，算力扩张正在受到电力、基础设施与资本开支效率的共同约束。单纯依赖“继续堆算力”获得超额收益的难度在上升。",
+      "why": "这意味着AI产业投资将更多向“高效率基础设施、低成本运营能力”倾斜。对二级市场而言，供应链中具备真实交付和成本优势的环节会更抗波动。",
+      "grade": "C",
+      "links": [
+        "https://www.reuters.com/technology/openai/"
+      ]
+    },
+    {
+      "title": "【科技/AI】头部AI公司治理与组织变动可能成为短线波动放大器",
+      "fact": "主流媒体持续出现头部AI企业组织与治理层面的变化线索。虽然未必改变长期方向，但会在短期交易层面引发再定价与情绪共振。",
+      "why": "治理变量通常影响估值折价系数而非单日收入，因此市场反应常常“先过度、后修正”。你在看相关消息时可优先判断其是否影响核心商业路径。",
+      "grade": "C",
+      "links": [
+        "https://www.reuters.com/technology/openai/"
+      ]
+    },
+    {
+      "title": "【财经/市场】中东冲突与油价联动，继续压制全球风险偏好",
+      "fact": "Reuters近期多篇市场报道把中东局势升级与油价走高、股市承压直接关联。跨资产层面，能源、通胀预期与利率预期形成了新的短线耦合。",
+      "why": "当油价上行成为市场主线之一时，权益资产估值会受到系统性压制，尤其是长久期成长资产。你的仓位管理应把外部宏观波动纳入日常风控。",
+      "grade": "B",
+      "links": [
+        "https://www.reuters.com/business/us-stock-futures-slip-investors-weigh-middle-east-war-fallout-2026-03-05/"
+      ]
+    },
+    {
+      "title": "【财经/市场】银强锡弱分化延续：贵金属与工业金属节奏不同步",
+      "fact": "当前可见行情线索显示，白银相对维持强势，而锡价波动偏弱，呈现出“贵金属避险属性”和“工业金属需求预期”不同步的格局。",
+      "why": "这种分化会直接影响你持仓的短线解释框架：兴业银锡更可能先交易银端弹性，锡端拖累则限制上行斜率。后续若锡价企稳，才有望形成共振。",
+      "grade": "B",
+      "links": [
+        "http://www.kitco.com/charts/silver",
+        "https://www.lme.com/en/metals/non-ferrous/lme-tin"
+      ]
+    },
+    {
+      "title": "【财经/市场】油价驱动的再通胀担忧抬头，市场对政策路径更敏感",
+      "fact": "在油价冲击背景下，市场对“通胀回落路径是否被打断”保持高度警惕。利率预期的微小变化会通过估值链条迅速传导到股债与大宗。",
+      "why": "这类环境下，仓位的抗波动属性比追求极致收益更重要。对你而言，监控油价与风险资产联动强度，是每天开盘前的必要动作。",
       "grade": "B",
       "links": [
         "https://www.reuters.com/markets/us/wall-streets-immunity-mideast-oil-shock-will-now-be-tested-2026-03-09/"
       ]
     },
     {
-      "title": "中国政策线索：稳增长+创新并行",
-      "fact": "Xinhua与Reuters对2026年增长目标与政策组合口径趋同。",
-      "why": "方向明确，但交易更看执行强度与节奏。",
+      "title": "【宏观/国际】中国2026增长目标区间与政策主线保持稳定",
+      "fact": "Xinhua相关报道延续了“稳增长+高质量发展”的政策框架，目标区间与政策组合并未出现超预期突变。市场更关注执行进度，而非口号变化。",
+      "why": "宏观锚稳定有助于降低预期波动，但行业层面的分化会更显著。你在看宏观新闻时，建议把重心放在“哪些政策先落地、落地到什么行业”。",
       "grade": "B",
       "links": [
         "https://english.news.cn/20260306/42d1bb0eebd54ebba5aca2d3b8499d2b/c.html"
+      ]
+    },
+    {
+      "title": "【宏观/国际】创新驱动叙事持续强化，科技制造链仍是中期重点",
+      "fact": "Xinhua最新口径继续强调创新驱动与产业升级并行，这与全球科技竞争背景形成呼应。政策方向上，科技与先进制造仍处于优先序列。",
+      "why": "对资产配置来说，这意味着“有政策支持且有盈利兑现能力”的细分方向更可能跑赢。你在跟踪日报时可把政策方向与公司基本面交叉验证。",
+      "grade": "B",
+      "links": [
+        "https://english.news.cn/20260307/ce1f4377fdcd4c00b297ebffcc1a7eab/c.html"
+      ]
+    }
+  ],
+  "deep": [
+    {
+      "title": "从‘AI融资竞速’到‘AI回报竞速’：Nvidia表态背后的估值重心迁移",
+      "fact": "近期关于Nvidia对OpenAI和Anthropic投资边际收缩的消息，被市场视为AI资金逻辑变化的信号。核心并非AI需求消失，而是资本开始要求更明确、更可衡量的回报路径。",
+      "why": "这会改变科技资产的筛选标准：单纯讲增长故事的项目估值弹性会下降，而能证明客户付费和成本控制能力的公司更受青睐。对你看科技新闻的方式，建议从“技术突破”升级为“技术+商业闭环”双维度。",
+      "grade": "B",
+      "links": [
+        "https://www.reuters.com/business/nvidia-will-not-be-able-invest-100-billion-openai-due-ipo-ceo-jensen-says-2026-03-04/"
+      ]
+    },
+    {
+      "title": "油价冲击与风险资产再定价：为什么这波不只是能源问题",
+      "fact": "Reuters多篇报道显示，油价上行与美股风险偏好下降同步出现，且市场对再通胀担忧明显上升。油价变化正在通过通胀预期和利率预期，传导到更广泛资产类别。",
+      "why": "这意味着你在看资源股或科技股时，都不能只盯行业内逻辑，而要把宏观变量放到同一张图里。对持仓管理而言，油价趋势往往是“先行指标”，可用于提前调整风险敞口。",
+      "grade": "B",
+      "links": [
+        "https://www.reuters.com/markets/us/wall-streets-immunity-mideast-oil-shock-will-now-be-tested-2026-03-09/"
+      ]
+    },
+    {
+      "title": "兴业银锡的阶段性定价框架：公告空窗期下，价格因子优先",
+      "fact": "目前可核验信息中，兴业银锡公司层新公告信号偏弱，而银价与锡价出现明显分化。资金在这种阶段更倾向用外部价格变量来决定短线仓位，而非等待公司叙事更新。",
+      "why": "对你的实操含义很直接：先盯‘银价续强、锡价止跌、公告更新’三信号，再决定仓位节奏。这样做的好处是把主观判断转为可执行条件，减少盘中情绪噪音。",
+      "grade": "A",
+      "links": [
+        "https://www.stcn.com/quotes/index/sz000426.html",
+        "https://www.lme.com/en/metals/non-ferrous/lme-tin"
       ]
     }
   ],
   "impact": [
     {
-      "title": "机会",
-      "fact": "银价高位有利于兴业银锡的短线弹性预期。",
-      "why": "价格因子在公告空窗期权重更高。",
+      "title": "机会：白银维持高位时，兴业银锡更容易获得‘银弹性’溢价",
+      "fact": "在公司层新增催化有限的情况下，白银价格高位与贵金属风险偏好常常成为短线资金的主要锚点。当前多源行情信息仍支持‘银价韧性’这个前提。",
+      "why": "如果该前提维持，你的持仓更可能受益于“外部价格驱动”的情绪强化。实操上可把银价趋势作为仓位倾斜的先行观察指标。",
       "grade": "B",
       "links": [
         "http://www.kitco.com/charts/silver"
       ]
     },
     {
-      "title": "风险",
-      "fact": "锡价偏弱与全球风险偏好波动叠加，可能放大回撤。",
-      "why": "资源股受商品与风险资产双重影响。",
+      "title": "风险：锡价弱势与宏观波动叠加，可能放大持仓回撤幅度",
+      "fact": "锡价端波动偏弱叠加全球风险偏好震荡，会让‘银锡协同上涨’的逻辑暂时失真。若外部宏观扰动进一步加剧，资源股也会受到系统性波动冲击。",
+      "why": "这会使持仓在短周期内更依赖风控节奏而非单一方向判断。建议你在信号未共振前，优先控制节奏和波动敞口。",
       "grade": "B",
       "links": [
-        "https://www.lme.com/en/metals/non-ferrous/lme-tin"
+        "https://www.lme.com/en/metals/non-ferrous/lme-tin",
+        "https://www.reuters.com/business/us-stock-futures-slip-investors-weigh-middle-east-war-fallout-2026-03-05/"
       ]
     },
     {
-      "title": "可执行动作",
-      "fact": "每日固定检查银价、LME锡、兴业银锡新公告三项。",
-      "why": "提升仓位调整的一致性与可复盘性。",
+      "title": "动作：建立‘三信号打分卡’，把仓位调整流程固定化",
+      "fact": "你可以每天固定给三项打分：银价趋势（强/中/弱）、锡价趋势（强/中/弱）、公司公告（有/无）。连续两天“银强+锡稳+公告增量”再提高进攻性，会比单日冲动操作更稳。",
+      "why": "打分卡的意义在于把决策过程外显化，可复盘、可迭代。对高集中持仓来说，这能显著降低情绪交易带来的噪音损耗。",
       "grade": "A",
       "links": [
         "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/000426.phtml"
@@ -108,123 +205,30 @@
   ],
   "watch": [
     {
-      "title": "兴业银锡新增公告",
-      "fact": "是否出现新日期公告正文链接。",
-      "why": "公司层面直接催化最关键。",
+      "title": "兴业银锡是否出现新日期公告原文",
+      "fact": "重点关注是否出现晚于3月5日的新公告正文链接，尤其是涉及资产处置进展、经营预期或资本运作的条目。若有新增公告，优先核验原文而非二手解读。",
+      "why": "公司公告是最直接、最可操作的个股催化源。对你当前持仓而言，公告的边际变化往往比泛市场新闻更具交易价值。",
       "grade": "A",
       "links": [
         "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/000426.phtml"
       ]
     },
     {
-      "title": "银价是否继续走强",
-      "fact": "关注高位是否继续上移。",
-      "why": "决定银弹性交易强度。",
+      "title": "银价能否维持高位并继续上移",
+      "fact": "观察银价是否延续高位震荡上移，而不是快速回落。若出现连续回撤，需警惕“银弹性”交易降温。",
+      "why": "银价是你当前持仓框架中的关键外部驱动之一。趋势是否延续，将直接影响短线风险收益比。",
       "grade": "B",
       "links": [
         "http://www.kitco.com/charts/silver"
       ]
     },
     {
-      "title": "LME锡是否止跌",
-      "fact": "观察日内跌幅收敛或转正信号。",
-      "why": "影响银锡分化是否缓和。",
+      "title": "LME锡价是否出现止跌信号",
+      "fact": "重点看日内跌幅是否收敛、是否出现企稳反弹的结构性迹象。若持续走弱，银锡分化可能进一步扩大。",
+      "why": "锡价是否止跌决定了你的持仓能否从‘单腿（银）驱动’过渡到‘双腿（银+锡）共振’。这是提升仓位进攻性的关键前提之一。",
       "grade": "B",
       "links": [
         "https://www.lme.com/en/metals/non-ferrous/lme-tin"
-      ]
-    }
-  ],
-  "highlights": [
-    {
-      "title": "【科技/AI】Nvidia投资边际收缩",
-      "fact": "AI资金端从规模竞争转向回报约束。",
-      "why": "高估值资产定价方式可能变化。",
-      "grade": "B",
-      "links": [
-        "https://www.reuters.com/business/nvidia-will-not-be-able-invest-100-billion-openai-due-ipo-ceo-jensen-says-2026-03-04/"
-      ]
-    },
-    {
-      "title": "【科技/AI】OpenAI相关新闻仍高频",
-      "fact": "主流媒体持续更新OpenAI融资与业务线索。",
-      "why": "行业主线热度仍在。",
-      "grade": "B",
-      "links": [
-        "https://www.reuters.com/technology/openai/"
-      ]
-    },
-    {
-      "title": "【科技/AI】AI商业化更看兑现能力",
-      "fact": "市场从“讲故事”转向“看落地与现金流”。",
-      "why": "影响AI上下游估值溢价。",
-      "grade": "B",
-      "links": [
-        "https://www.cnbc.com/2026/03/04/nvidia-huang-openai-investment.html"
-      ]
-    },
-    {
-      "title": "【科技/AI】AI与能源/算力耦合加深",
-      "fact": "算力扩张与能源成本成为关键约束。",
-      "why": "将影响后续资本开支结构。",
-      "grade": "C",
-      "links": [
-        "https://www.reuters.com/technology/openai/"
-      ]
-    },
-    {
-      "title": "【科技/AI】头部AI公司治理扰动增加",
-      "fact": "管理层与战略调整消息频出。",
-      "why": "短线可能放大波动。",
-      "grade": "C",
-      "links": [
-        "https://www.reuters.com/technology/openai/"
-      ]
-    },
-    {
-      "title": "【财经/市场】油价冲击风险偏好",
-      "fact": "中东冲突背景下油价与美股波动联动增强。",
-      "why": "直接影响全球权益估值。",
-      "grade": "B",
-      "links": [
-        "https://www.reuters.com/business/us-stock-futures-slip-investors-weigh-middle-east-war-fallout-2026-03-05/"
-      ]
-    },
-    {
-      "title": "【财经/市场】银强锡弱分化延续",
-      "fact": "贵金属与工业金属表现出现节奏差。",
-      "why": "影响兴业银锡短线定价逻辑。",
-      "grade": "B",
-      "links": [
-        "http://www.kitco.com/charts/silver",
-        "https://www.lme.com/en/metals/non-ferrous/lme-tin"
-      ]
-    },
-    {
-      "title": "【财经/市场】通胀预期扰动再抬头",
-      "fact": "油价与地缘因素推升再通胀担忧。",
-      "why": "压制长久期资产表现。",
-      "grade": "B",
-      "links": [
-        "https://www.reuters.com/markets/us/wall-streets-immunity-mideast-oil-shock-will-now-be-tested-2026-03-09/"
-      ]
-    },
-    {
-      "title": "【宏观/国际】中国增长目标区间明确",
-      "fact": "政策口径围绕稳增长与高质量发展展开。",
-      "why": "宏观预期锚更清晰。",
-      "grade": "B",
-      "links": [
-        "https://english.news.cn/20260306/42d1bb0eebd54ebba5aca2d3b8499d2b/c.html"
-      ]
-    },
-    {
-      "title": "【宏观/国际】创新驱动仍是政策主轴",
-      "fact": "政策叙事强调创新与产业升级协同。",
-      "why": "中期主线对科技制造链有支撑。",
-      "grade": "B",
-      "links": [
-        "https://english.news.cn/20260307/ce1f4377fdcd4c00b297ebffcc1a7eab/c.html"
       ]
     }
   ]
