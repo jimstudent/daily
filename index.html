@@ -80,8 +80,8 @@
 <script>
 const order=[["special","A. 兴业银锡专项"],["highlights","B. 今日要点"],["deep","C. 深度解读"],["impact","D. 对我可能有影响"],["watch","E. 今天值得关注"]];
 const PREF_KEY='daily_pref_v1';
-// TODO: set to your Cloudflare Worker endpoint, e.g. https://daily-click-api.xxx.workers.dev
-const TRACK_ENDPOINT='';
+// Cloudflare Worker click tracking endpoint
+const TRACK_ENDPOINT='https://kv-get-started.zhaowuhan.workers.dev';
 function loadPref(){try{return JSON.parse(localStorage.getItem(PREF_KEY)||'{"sections":{},"titles":{},"links":0,"opens":0}')}catch{return {sections:{},titles:{},links:0,opens:0}}}
 function savePref(p){localStorage.setItem(PREF_KEY, JSON.stringify(p))}
 function bump(obj,key,n=1){obj[key]=(obj[key]||0)+n}
