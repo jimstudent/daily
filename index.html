@@ -98,7 +98,10 @@ async function load(path){const r=await fetch(path+'?_='+Date.now());if(!r.ok)th
 function render(d){document.getElementById('meta').textContent=`${d.date||''} · ${d.window||''}`;const q=document.getElementById('quick');q.innerHTML='';(d.quick||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;q.appendChild(li)});
   const hs=d.highlights||[]; const ai=hs.filter(x=>(x.title||'').includes('【科技/AI】')).length; const mk=hs.filter(x=>(x.title||'').includes('【财经/市场】')).length; const ma=hs.filter(x=>(x.title||'').includes('【宏观/国际】')).length;
   document.getElementById('ratio').innerHTML=`<span class='chip'>科技/AI ${ai}</span><span class='chip'>财经/市场 ${mk}</span><span class='chip'>宏观/国际 ${ma}</span>`;
-  const s=document.getElementById('sections');s.innerHTML='';order.forEach(([k,t])=>{const c=document.createElement('div');c.className='card';c.id=`sec-${k}`;c.innerHTML=`<h2>${t}</h2>`;const arr=d[k]||[];if(!arr.length)c.innerHTML+=`<div class='why'>该项数据不足</div>`;else arr.forEach(it=>c.innerHTML+=item(it,k));s.appendChild(c)});
+  const s=document.getElementById('sections');s.innerHTML='';const prefNow=loadPref(); order.forEach(([k,t])=>{const c=document.createElement('div');c.className='card';c.id=`sec-${k}`;c.innerHTML=`<h2>${t}</h2>`;const arr=d[k]||[];if(!arr.length)c.innerHTML+=`<div class='why'>该项数据不足</div>`;else {
+    const sorted=[...arr].sort((a,b)=>((prefNow.titles?.[b.title]||0)-(prefNow.titles?.[a.title]||0)));
+    sorted.forEach(it=>c.innerHTML+=item(it,k));
+  } s.appendChild(c)});
   const drawer=document.getElementById('drawer');
   const mask=document.getElementById('drawerMask');
   const body=document.getElementById('drawerBody');
