@@ -16,7 +16,7 @@
     .chip{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line)}
     .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px}
     h1{margin:0;font-size:20px} h2{margin:0 0 8px;font-size:16px}
-    .item{border-top:1px solid var(--line);padding:10px 0}.item:first-child{border-top:0;padding-top:0}
+    .item{border-top:1px solid var(--line);padding:10px 0;cursor:pointer}.item:first-child{border-top:0;padding-top:0}
     .why{color:var(--muted);font-size:14px;margin-top:4px}
     .tag{font-size:12px;padding:2px 8px;border-radius:10px;margin-left:8px}
     .A{background:#1f5134}.B{background:#6b5b1e}.C{background:#6b2620}
@@ -84,8 +84,8 @@ function item(it){
   const summary=(it.fact||'').split('。')[0] + (it.fact&&it.fact.includes('。')?'。':'');
   const src=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
   const payload=encodeURIComponent(JSON.stringify({title:it.title||'',grade:it.grade||'',fact:it.fact||'',why:it.why||'',links:it.links||[]}));
-  return `<div class='item'>
-    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${summary||''}</div></div><button class='btn-link open-drawer' data-item='${payload}' type='button'>查看详情</button></div>
+  return `<div class='item open-drawer' data-item='${payload}'>
+    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${summary||''}</div></div></div>
     <div class='detail'><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${src}</div></div>
   </div>`
 }
