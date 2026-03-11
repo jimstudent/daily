@@ -89,14 +89,18 @@ function sendTrack(payload){
   if(!TRACK_ENDPOINT) return;
   const url = TRACK_ENDPOINT.replace(/\/$/, '') + '/api/click';
   const body = JSON.stringify(payload);
-  try{
-    if(navigator.sendBeacon){
-      const blob = new Blob([body], {type:'application/json'});
-      navigator.sendBeacon(url, blob);
-    } else {
-      fetch(url,{method:'POST',headers:{'content-type':'application/json'},body,keepalive:true}).catch(()=>{});
-    }
-  }catch{}
+  // Use fetch first (more reliable for Cloudflare Worker JSON parsing than sendBeacon in some browsers)
+  fetch(url,{method:'POST',headers:{'content-type':'application/json'},body,mode:'cors',keepalive:true})
+    .then(()=>{})
+    .catch(()=>{
+      // fallback beacon (best effort)
+      try{
+        if(navigator.sendBeacon){
+          const blob = new Blob([body], {type:'application/json'});
+          navigator.sendBeacon(url, blob);
+        }
+      }catch{}
+    });
 }
 function hostLabel(url){try{const h=new URL(url).hostname.replace('www.','');return h.split('.').slice(0,2).join('.')}catch{return '来源'}}
 function item(it,section){
