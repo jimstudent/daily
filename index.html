@@ -115,7 +115,7 @@ function item(it,section){
   const src=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
   const payload=encodeURIComponent(JSON.stringify({section:section||'',title:it.title||'',grade:it.grade||'',fact:it.fact||'',why:it.why||'',links:it.links||[]}));
   return `<div class='item open-drawer' data-item='${payload}'>
-    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${summary||''}</div></div></div>
+    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${it.fact||''}</div></div></div>
     <div class='detail'><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${src}</div></div>
   </div>`
 }
@@ -141,9 +141,9 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
       const it=JSON.parse(decodeURIComponent(btn.dataset.item||''));
       const links=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer' data-track='link'>${hostLabel(l)}</a>`).join('');
       const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
-      const parts=splitSummary(it.fact||'');
-      const factDetail = parts.rest || it.fact || '';
-      body.innerHTML=`<div class='drawer-title'>${it.title||''} ${g}</div><div>${factDetail}</div><div class='why'>${it.why||''}</div><div class='src'>${links}</div>`;
+      const detailText=((it.fact||'') + ' ' + (it.why||'')).trim();
+      const digest = detailText.length > 220 ? detailText.slice(0,220) + '…' : detailText;
+      body.innerHTML=`<div class='drawer-title'>${it.title||''} ${g}</div><div>${digest}</div><div class='src'>${links}</div>`;
       drawer.classList.add('open'); mask.classList.add('open');
 
       bump(pref.sections, it.section || 'unknown');
