@@ -62,9 +62,7 @@
   <div class="card">
     <h2>30秒快读</h2>
     <div class="legend">
-      <span class="tag A">证据A</span><span>官方/交易所/公告原文</span>
-      <span class="tag B">证据B</span><span>主流媒体/稳定行情页</span>
-      <span class="tag C">证据C</span><span>摘要线索（仅补充）</span>
+      <span class="meta">来源优先级：官方/交易所/公告原文 ＞ 主流媒体/稳定行情页 ＞ 补充线索</span>
     </div>
     <div id="ratio" class="row" style="margin-top:8px"></div>
     <div id="pref" class="meta" style="margin-top:6px"></div>
@@ -109,13 +107,12 @@ function splitSummary(text=''){
   return {summary:text.slice(0,i+1), rest:text.slice(i+1).trim()};
 }
 function item(it,section){
-  const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
   const parts=splitSummary(it.fact||'');
   const summary=parts.summary;
   const src=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
   const payload=encodeURIComponent(JSON.stringify({section:section||'',title:it.title||'',grade:it.grade||'',fact:it.fact||'',why:it.why||'',links:it.links||[]}));
   return `<div class='item open-drawer' data-item='${payload}'>
-    <div class='item-head'><div><b>${it.title||''}</b>${g}<div class='summary'>${it.fact||''}</div></div></div>
+    <div class='item-head'><div><b>${it.title||''}</b><div class='summary'>${it.fact||''}</div></div></div>
     <div class='detail'><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${src}</div></div>
   </div>`
 }
@@ -140,10 +137,9 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
     try{
       const it=JSON.parse(decodeURIComponent(btn.dataset.item||''));
       const links=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer' data-track='link'>${hostLabel(l)}</a>`).join('');
-      const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
       const digest = (it.digest||'').trim();
       const detailText = digest || '该条暂未提供来源摘要（digest 字段）。';
-      body.innerHTML=`<div class='drawer-title'>${it.title||''} ${g}</div><div>${detailText}</div><div class='src'>${links}</div>`;
+      body.innerHTML=`<div class='drawer-title'>${it.title||''}</div><div>${detailText}</div><div class='src'>${links}</div>`;
       drawer.classList.add('open'); mask.classList.add('open');
 
       bump(pref.sections, it.section || 'unknown');
