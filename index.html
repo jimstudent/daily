@@ -103,9 +103,15 @@ function sendTrack(payload){
     });
 }
 function hostLabel(url){try{const h=new URL(url).hostname.replace('www.','');return h.split('.').slice(0,2).join('.')}catch{return '来源'}}
+function splitSummary(text=''){
+  const i=text.indexOf('。');
+  if(i===-1) return {summary:text, rest:''};
+  return {summary:text.slice(0,i+1), rest:text.slice(i+1).trim()};
+}
 function item(it,section){
   const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
-  const summary=(it.fact||'').split('。')[0] + (it.fact&&it.fact.includes('。')?'。':'');
+  const parts=splitSummary(it.fact||'');
+  const summary=parts.summary;
   const src=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
   const payload=encodeURIComponent(JSON.stringify({section:section||'',title:it.title||'',grade:it.grade||'',fact:it.fact||'',why:it.why||'',links:it.links||[]}));
   return `<div class='item open-drawer' data-item='${payload}'>
@@ -135,7 +141,9 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
       const it=JSON.parse(decodeURIComponent(btn.dataset.item||''));
       const links=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer' data-track='link'>${hostLabel(l)}</a>`).join('');
       const g=it.grade?`<span class='tag ${it.grade}'>证据${it.grade}</span>`:'';
-      body.innerHTML=`<div class='drawer-title'>${it.title||''} ${g}</div><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${links}</div>`;
+      const parts=splitSummary(it.fact||'');
+      const factDetail = parts.rest || it.fact || '';
+      body.innerHTML=`<div class='drawer-title'>${it.title||''} ${g}</div><div>${factDetail}</div><div class='why'>${it.why||''}</div><div class='src'>${links}</div>`;
       drawer.classList.add('open'); mask.classList.add('open');
 
       bump(pref.sections, it.section || 'unknown');
