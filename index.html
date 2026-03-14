@@ -110,7 +110,7 @@ function item(it,section){
   const parts=splitSummary(it.fact||'');
   const summary=parts.summary;
   const src=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer'>${hostLabel(l)}</a>`).join('');
-  const payload=encodeURIComponent(JSON.stringify({section:section||'',title:it.title||'',grade:it.grade||'',fact:it.fact||'',why:it.why||'',links:it.links||[]}));
+  const payload=encodeURIComponent(JSON.stringify({section:section||'',title:it.title||'',fact:it.fact||'',why:it.why||'',digest:it.digest||'',links:it.links||[]}));
   return `<div class='item open-drawer' data-item='${payload}'>
     <div class='item-head'><div><b>${it.title||''}</b><div class='summary'>${it.fact||''}</div></div></div>
     <div class='detail'><div>${it.fact||''}</div><div class='why'>${it.why||''}</div><div class='src'>${src}</div></div>
