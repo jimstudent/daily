@@ -121,7 +121,13 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
   const oldHint=document.getElementById('quickHint'); if(oldHint) oldHint.remove();
   const quick=(Array.isArray(d.quick)?d.quick:[]).filter(Boolean);
   if(quick.length){
-    quick.forEach(t=>{const li=document.createElement('li');li.textContent=t;q.appendChild(li)});
+    quick.forEach(t=>{
+      const li=document.createElement('li');
+      if(typeof t==='string') li.textContent=t;
+      else if(t && typeof t==='object') li.textContent=t.title||t.fact||JSON.stringify(t);
+      else li.textContent=String(t);
+      q.appendChild(li)
+    });
   }else{
     const fb=[...(d.highlights||[]),...(d.special||[])].slice(0,5).map(x=>x?.title).filter(Boolean);
     if(fb.length){
