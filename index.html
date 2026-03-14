@@ -117,7 +117,25 @@ function item(it,section){
   </div>`
 }
 async function load(path){const r=await fetch(path+'?_='+Date.now());if(!r.ok)throw new Error('load failed');return r.json()}
-function render(d){document.getElementById('meta').textContent=`${d.date||''} · ${d.window||''}`;const q=document.getElementById('quick');q.innerHTML='';(d.quick||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;q.appendChild(li)});
+function render(d){document.getElementById('meta').textContent=`${d.date||''} · ${d.window||''}`;const q=document.getElementById('quick');q.innerHTML='';
+  const oldHint=document.getElementById('quickHint'); if(oldHint) oldHint.remove();
+  const quick=(Array.isArray(d.quick)?d.quick:[]).filter(Boolean);
+  if(quick.length){
+    quick.forEach(t=>{const li=document.createElement('li');li.textContent=t;q.appendChild(li)});
+  }else{
+    const fb=[...(d.highlights||[]),...(d.special||[])].slice(0,5).map(x=>x?.title).filter(Boolean);
+    if(fb.length){
+      fb.forEach(t=>{const li=document.createElement('li');li.textContent=t;q.appendChild(li)});
+      const hint=document.createElement('div');
+      hint.id='quickHint';
+      hint.className='meta';
+      hint.style.marginTop='6px';
+      hint.textContent='快读未单独生成，已自动使用今日核心标题补齐。';
+      q.parentElement.appendChild(hint);
+    }else{
+      const li=document.createElement('li');li.textContent='今日快读暂不可用，请稍后刷新。';q.appendChild(li);
+    }
+  }
   const hs=d.highlights||[]; const ai=hs.filter(x=>(x.title||'').includes('【科技/AI】')).length; const mk=hs.filter(x=>(x.title||'').includes('【财经/市场】')).length; const ma=hs.filter(x=>(x.title||'').includes('【宏观/国际】')).length;
   document.getElementById('ratio').innerHTML=`<span class='chip'>科技/AI ${ai}</span><span class='chip'>财经/市场 ${mk}</span><span class='chip'>宏观/国际 ${ma}</span>`;
   const s=document.getElementById('sections');s.innerHTML='';const prefNow=loadPref(); order.forEach(([k,t])=>{const c=document.createElement('div');c.className='card';c.id=`sec-${k}`;c.innerHTML=`<h2>${t}</h2>`;const arr=d[k]||[];if(!arr.length)c.innerHTML+=`<div class='why'>该项数据不足</div>`;else {
