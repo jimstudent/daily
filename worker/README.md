@@ -5,6 +5,10 @@ This worker ingests H5 click events and exposes aggregated preference stats.
 ## Endpoints
 - `POST /api/click` -> ingest one event
 - `GET /api/prefs?days=7` -> aggregated prefs for last N days
+- `POST /api/analyze` -> create deep-analysis task
+- `GET /api/analyze/:id` -> poll deep-analysis task
+- `POST /api/analyze/:id/callback` -> write task result (from OpenClaw executor)
+- `GET /api/analyze-queue` -> queue snapshot (optional for executor)
 - `GET /health` -> health check
 
 ## Deploy quick steps
