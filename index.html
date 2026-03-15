@@ -163,7 +163,8 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
       const links=(it.links||[]).map(l=>`<a href='${l}' target='_blank' rel='noreferrer' data-track='link'>${hostLabel(l)}</a>`).join('');
       const digest = (it.digest||'').trim();
       const detailText = digest || '该条暂未提供来源摘要（digest 字段）。';
-      body.innerHTML=`<div class='drawer-title'>${it.title||''}</div><div>${detailText}</div><div class='src'>${links}</div>`;
+      const cmdPayload = encodeURIComponent(JSON.stringify({title:it.title||'',fact:it.fact||'',why:it.why||'',digest:it.digest||'',links:it.links||[]}));
+      body.innerHTML=`<div class='drawer-title'>${it.title||''}</div><div>${detailText}</div><div class='src'>${links}</div><div style='margin-top:10px'><button class='btn-link' data-track='analyze' data-payload='${cmdPayload}'>【解读】</button></div>`;
       drawer.classList.add('open'); mask.classList.add('open');
 
       bump(pref.sections, it.section || 'unknown');
@@ -174,13 +175,27 @@ function render(d){document.getElementById('meta').textContent=`${d.date||''} ·
     }catch(e){console.error(e)}
   }});
 
-  body.addEventListener('click', (e)=>{
+  body.addEventListener('click', async (e)=>{
     if(e.target && e.target.dataset && e.target.dataset.track==='link'){
       const p=loadPref();
       p.links=(p.links||0)+1;
       savePref(p);
       const href=e.target.getAttribute('href')||'';
       sendTrack({type:'link', section:'source', title:href, source:hostLabel(href), path: location.pathname});
+      return;
+    }
+    if(e.target && e.target.dataset && e.target.dataset.track==='analyze'){
+      try{
+        const data=JSON.parse(decodeURIComponent(e.target.dataset.payload||'%7B%7D'));
+        const cmd = `请深度解读这条新闻（基于真实信源，并补充检索）：\n标题：${data.title||''}\n事实：${data.fact||''}\n摘要：${data.digest||''}\n来源：${(data.links||[]).join(' , ')}`;
+        await navigator.clipboard.writeText(cmd);
+        sendTrack({type:'open', section:'analyze', title:data.title||'unknown', path:location.pathname});
+        e.target.textContent='已复制解读指令';
+        setTimeout(()=>{e.target.textContent='【解读】';},1500);
+      }catch(err){
+        console.error(err);
+        alert('解读指令复制失败，请重试');
+      }
     }
   });
 }
