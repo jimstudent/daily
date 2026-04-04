@@ -25,11 +25,9 @@ Body:
   }
 }
 
-Then send the same analysis using the message tool with EXACTLY these fields:
-- action: send
-- channel: discord
-- target: user:1049197469239623680
-- message: prefix with 【H5解读】{task.source.title}\n\n then the analysis body
+Do NOT send any Discord or other channel message.
+Do NOT use the message tool.
+Only complete the callback writeback.
 
 If analysis fails, POST JSON to callback with:
 {
