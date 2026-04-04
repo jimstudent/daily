@@ -119,6 +119,34 @@ export default {
       return json({ ok: true, task }, request);
     }
 
+    // Claim next queued task for executor
+    if (url.pathname === '/api/analyze-queue/claim' && request.method === 'POST') {
+      try {
+        const qKey = 'analyze:queue';
+        const qRaw = (await env.DAILY_PREF_KV.get(qKey)) || '[]';
+        const queue = JSON.parse(qRaw);
+        if (!queue.length) return json({ ok: true, task: null }, request);
+
+        while (queue.length) {
+          const next = queue.shift();
+          const raw = await env.DAILY_PREF_KV.get(`analyze:task:${next.id}`);
+          if (!raw) continue;
+          const task = JSON.parse(raw);
+          if (task.status !== 'queued') continue;
+          task.status = 'running';
+          task.updatedAt = Date.now();
+          await env.DAILY_PREF_KV.put(`analyze:task:${next.id}`, JSON.stringify(task), { expirationTtl: 60 * 60 * 24 * 7 });
+          await env.DAILY_PREF_KV.put(qKey, JSON.stringify(queue), { expirationTtl: 60 * 60 * 24 * 7 });
+          return json({ ok: true, task }, request);
+        }
+
+        await env.DAILY_PREF_KV.put(qKey, JSON.stringify(queue), { expirationTtl: 60 * 60 * 24 * 7 });
+        return json({ ok: true, task: null }, request);
+      } catch (e) {
+        return json({ ok: false, error: String(e) }, request, 400);
+      }
+    }
+
     // Callback write result from OpenClaw executor
     if (url.pathname.startsWith('/api/analyze/') && url.pathname.endsWith('/callback') && request.method === 'POST') {
       try {

@@ -9,6 +9,7 @@ This worker ingests H5 click events and exposes aggregated preference stats.
 - `GET /api/analyze/:id` -> poll deep-analysis task
 - `POST /api/analyze/:id/callback` -> write task result (from OpenClaw executor)
 - `GET /api/analyze-queue` -> queue snapshot (optional for executor)
+- `POST /api/analyze-queue/claim` -> claim next queued task for executor
 - `GET /health` -> health check
 
 ## Deploy quick steps

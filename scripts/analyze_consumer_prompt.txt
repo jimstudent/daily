@@ -1,0 +1,37 @@
+Claim exactly one task from https://kv-get-started.zhaowuhan.workers.dev/api/analyze-queue/claim via POST. If response task is null, reply exactly NO_WORK and stop.
+
+If a task is returned, read:
+- task.id
+- task.source.title
+- task.source.fact
+- task.source.digest
+- task.source.links
+- task.source.section
+
+Then do a real deep analysis:
+1) Use the provided source links first.
+2) Supplement with web search only when needed.
+3) Produce a concise but complete Chinese analysis focused on what happened, why it matters, what to watch next.
+4) Do not invent facts.
+5) Output markdown text only.
+
+After analysis, POST JSON to:
+https://kv-get-started.zhaowuhan.workers.dev/api/analyze/{task.id}/callback
+Body:
+{
+  "status": "done",
+  "result": {
+    "analysisMarkdown": "...your analysis..."
+  }
+}
+
+Then send the same analysis to Discord user 1049197469239623680 in Chinese, prefixed with:
+【H5解读】{task.source.title}
+
+If analysis fails, POST JSON to callback with:
+{
+  "status": "failed",
+  "error": "short error summary"
+}
+
+Never process more than one task in one run.
